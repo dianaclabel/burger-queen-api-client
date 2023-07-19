@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LoginPage } from "./components/pages/login/LoginPage";
-import { Dashboard } from "./components/pages/dashboard/Dashboard";
+// import { Dashboard } from "./components/pages/dashboard/Dashboard";
 
 function App() {
   return (
     <div className="font-inter">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
