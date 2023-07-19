@@ -1,5 +1,5 @@
-import burgerMobile from "../../../assets/burgerMobile.png";
-import logo from "../../../assets/logo.png";
+import burgerMobile from "../../assets/burgerMobile.png";
+import logo from "../../assets/logo.png";
 
 export const LoginPage = () => {
   return (
