@@ -1,3 +1,4 @@
+
 .contenedor{
     display: flex;
     justify-content: center;
@@ -9,18 +10,66 @@
 .contenedor1{
     background-color: blueviolet;
     position: absolute;
-    width: 10%;
-    height: 8%;
+    width: 100%;
+    height: 100%;
 }
 .color1{
     background-color: #F58C1E;
     position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    height: 20%;
+    height: 13%;
 }
-.contenedor2{
-    background-color: rgb(214, 226, 43);
+.logo{
+    width: 9vh;
+}
+.textoAdmin{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 55px;
+}
+.usuario{
+    width: 5.2vh;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+.color2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F0EB;
     position: relative;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 77%;
+    padding-top: 5%;
+}
+.buttonHome{
+    background-color:#7C5632 ;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 70%;
+    height: 15%;
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px #372F2A
+}
+.color3{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #F58C1E;
+    position: relative;
+    width: 100%;
+    height: 10%;
+}
+.iconLogout{
+    width: 5.2vh;
+    margin-right: 50px;
 }
