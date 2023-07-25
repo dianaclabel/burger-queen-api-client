@@ -4,43 +4,44 @@ import logo from "../../assets/logo.png";
 // import { API_URL } from "../../constants";
 
 export const LoginPage = () => {
-  // const login: FormEventHandler<HTMLFormElement> = (event) => {
-  //   event.preventDefault();
-  //   console.log("login", event);
+  //   const login: FormEventHandler<HTMLFormElement> = (event) => {
+  //     event.preventDefault();
+  //     console.log("login", event);
 
-  //   const formData = new FormData(event.target as HTMLFormElement);
+  //     const formData = new FormData(event.target as HTMLFormElement);
 
-  //   const payload = {
-  //     email: formData.get("email"),
-  //     password: formData.get("password"),
-  //   };
+  //     const payload = {
+  //       email: formData.get("email"),
+  //       password: formData.get("password"),
+  //     };
 
-  //   fetch(API_URL + "/login", {
-  //     method: "POST",
-  //     headers: {
-  //       accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(payload),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         alert("login exitoso");
-
-  //         response.json().then((data) => {
-  //           console.log(data);
-
-  //           /** @todo: Guardar el accessToken en localStorage y navegar al dashboard */
-  //         });
-  //       } else {
-  //         alert("Correo o contraseña incorrectos");
-  //       }
+  //     fetch(API_URL + "/login", {
+  //       method: "POST",
+  //       headers: {
+  //         accept: "application/json",
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(payload),
   //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       alert("No se pudo establecer una conexion");
-  //     });
-  // };
+  //       .then((response) => {
+  //         console.log(response.ok);
+  //         if (response.ok) {
+  //           alert("login exitoso");
+
+  //           response.json().then((data) => {
+  //             console.log(data);
+
+  //             /** @todo: Guardar el accessToken en localStorage y navegar al dashboard */
+  //           });
+  //         } else {
+  //           alert("Correo o contraseña incorrectos");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //         alert("No se pudo establecer una conexion");
+  //       });
+  //   };
 
   return (
     <div className="min-h-screen bg-orange-50">
