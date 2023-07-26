@@ -1,32 +1,40 @@
-import './HomeAdmin.css'
 
-function HomeAdmin(){
+import './StyleAdmin.css'
+import { useNavigate } from 'react-router-dom'
+import { HeaderAdmin } from './compBodyAdmin/HeaderAdmin'
+import { MainHomeAdmin } from './compBodyAdmin/MainHomeAdmin'
+import { NavHomeAdmin } from './compBodyAdmin/NavHomeAdmin'
 
-    return(
+export const HomeAdmin = () => {
+
+    let navigator = useNavigate()
+
+    const onTrabajadores = () => {
+        navigator("/trabajadores")
+    }
+    const onDesayunos = () => {
+        navigator("/desayunos")
+    }
+    const onAlmuerzos = () => {
+        navigator("/almuerzos")
+    }
+    const onPedidos = () => {
+        navigator("/pedidos")
+    }
+
+    return (
         <>
-        <div className='contenedor'>
-            <div className='contenedor1'>
-                <header className='color1'>
-                    <img className='logo' src="src/assets/Logo.png"/>
-                    <h1 className='textoAdmin'>Admin</h1>
-                    <div className='usuario'>
-                        <img className='iconCustomer' src="src/assets/Customer.png" />
-                        <p>Federico</p>
-                    </div>
-                </header>
-                <main className='color2'>
-                    <button className='buttonHome'>Trabajadores</button>
-                    <button className='buttonHome'>Desayuno</button>
-                    <button className='buttonHome'>Almuerzo y Cena</button>
-                    <button className='buttonHome'>Pedidos</button>
-                </main>
-                <footer className='color3'>
-                <img className='iconLogout' src="src/assets/Logout.png" />
-                </footer>
+            <div className='contenedor'>
+                <HeaderAdmin role="Admin" userName="Federico" />
+                <MainHomeAdmin {...{
+                    onTrabajadores: onTrabajadores,
+                    onDesayunos: onDesayunos,
+                    onAlmuerzos: onAlmuerzos,
+                    onPedidos: onPedidos
+                }
+                } />
+                <NavHomeAdmin />
             </div>
-        </div>
-    </>
+        </>
     )
 }
-
-export default HomeAdmin

@@ -1,0 +1,134 @@
+
+.contenedor{
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    background-color: blue;
+}
+header{
+    background-color: #F58C1E;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px;
+}
+main{
+    padding-top: 50px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F0EB;
+    width: 100%;
+}
+.titulo{
+    color: #372F2A;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px #7a7975;
+}
+.navHomeAdmin{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #F58C1E;
+    padding: 20px 50px;
+    width: 100%;
+}
+.navTrabajadores{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F58C1E;
+    padding: 20px 50px;
+    width: 100%;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.textoAdmin{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px #555452;
+}
+.usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 10px #555452;
+}
+.buttonHome {
+    background-color:#7C5632 ;
+    text-align: center;
+    text-shadow: 3px 3px 10px #372F2A;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 75%;
+    height: 15%;
+    margin-top: 30px;    
+    box-shadow: 5px 5px 10px #372F2A;
+}
+
+.boxTrabajador {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#7C5632 ;
+    text-shadow: 3px 3px 10px #372F2A;
+    color: #FFFFFF;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 75%;
+    height: 15%;
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px #372F2A;
+
+}
+.nombreTrabajador{
+    font-size: 20px;
+    font-weight: bold;
+}
+.datosTrabajador{
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 25px;
+}
+.containerIconsTrab{
+    display: flex;
+    width: 20%;
+}
+.containerTextTrab{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.iconLogout,.iconCustomer,.iconReturn{
+    width: 40px;
+    cursor: pointer;
+}
+.iconUser{
+    width: 50px;
+    cursor: pointer;
+}
+.iconEdit{
+    width: 35px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.iconDelete{
+    width: 50px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.iconAddNew{
+    width: 80px;
+    cursor: pointer;
+}
