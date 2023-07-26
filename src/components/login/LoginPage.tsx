@@ -1,47 +1,48 @@
-// import { FormEventHandler } from "react";
+import { FormEventHandler } from "react";
 import burgerMobile from "../../assets/burgerMobile.png";
 import logo from "../../assets/logo.png";
-// import { API_URL } from "../../constants";
+import { API_URL } from "../../constants";
 
 export const LoginPage = () => {
-  //   const login: FormEventHandler<HTMLFormElement> = (event) => {
-  //     event.preventDefault();
-  //     console.log("login", event);
+  const login: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    console.log("login", event);
 
-  //     const formData = new FormData(event.target as HTMLFormElement);
+    const formData = new FormData(event.target as HTMLFormElement);
 
-  //     const payload = {
-  //       email: formData.get("email"),
-  //       password: formData.get("password"),
-  //     };
+    const dataUser = {
+      email: formData.get("email"),
+      password: formData.get("password"),
+    };
 
-  //     fetch(API_URL + "/login", {
-  //       method: "POST",
-  //       headers: {
-  //         accept: "application/json",
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(payload),
-  //     })
-  //       .then((response) => {
-  //         console.log(response.ok);
-  //         if (response.ok) {
-  //           alert("login exitoso");
+    //consumiendo la API
+    fetch(API_URL + "/login", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataUser),
+    })
+      .then((response) => {
+        console.log(response);
+        if (response.ok) {
+          alert("login exitoso");
 
-  //           response.json().then((data) => {
-  //             console.log(data);
+          response.json().then((data) => {
+            console.log(data);
 
-  //             /** @todo: Guardar el accessToken en localStorage y navegar al dashboard */
-  //           });
-  //         } else {
-  //           alert("Correo o contraseña incorrectos");
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //         alert("No se pudo establecer una conexion");
-  //       });
-  //   };
+            /** @todo: Guardar el accessToken en localStorage y navegar al dashboard */
+          });
+        } else {
+          alert("Correo o contraseña incorrectos");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("No se pudo establecer una conexion");
+      });
+  };
 
   return (
     <div className="min-h-screen bg-orange-50">
@@ -55,7 +56,7 @@ export const LoginPage = () => {
       </div>
       <div className="px-12">
         {/* onSubmit={login} */}
-        <form>
+        <form onSubmit={login}>
           <div className="mb-4">
             <label className="block font-bold pb-2">Correo</label>
             <input
