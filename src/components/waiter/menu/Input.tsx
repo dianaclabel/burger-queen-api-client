@@ -7,7 +7,7 @@ type Props = Omit<HTMLProps<HTMLInputElement>, "className"> & {
 export const Input = ({ icon, ...inputProps }: Props) => {
   return (
     <>
-      <div className=" relative w-[80%] m-auto m-3">
+      <div className="inline-block relative">
         <input
           {...inputProps}
           className="border border-orange-900 rounded-xl p-1"
