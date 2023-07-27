@@ -1,3 +1,4 @@
+import { PedidoAdmin } from "../PedidoAdmin"
 
 
 export const MainPedidosAdmin = () => {
@@ -5,6 +6,7 @@ export const MainPedidosAdmin = () => {
     <>
         <main>
             <h2 className="titulo" >Pedidos</h2>
+            <PedidoAdmin/>
 
         </main>
     </>

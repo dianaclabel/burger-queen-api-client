@@ -1,11 +1,23 @@
+type TrabajadorProps = {
+  id: string,
+  name: string,
+  email: string,
+  position: string
+}
 
+const trab1: TrabajadorProps = {
+  id: "1",
+  name: "Luis Garcia",
+  email: "luis.garcia@burgerqueen.com",
+  position: "waiter"
+}
 
-export const Trabajador = () => {
+export const Trabajador = ({TrabajadorProps}) => {
   return (
     <>
         <section className='boxTrabajador'>
             <div className="containerTextTrab">
-                <p className="nombreTrabajador">1. Luis Garcia</p>
+                <p className="nombreTrabajador">{trab1.name}</p>
                 <div className="datosTrabajador">
                     <p>Correo: luis.garcia@burgerqueen.com</p>
                     <p>Cargo: mesero</p>

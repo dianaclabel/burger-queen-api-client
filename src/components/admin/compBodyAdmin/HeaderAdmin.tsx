@@ -1,10 +1,10 @@
 
-type Props = {
+type HeaderProps = {
     role: string;
     userName: string;
 };
 
-export const HeaderAdmin = ({role, userName}: Props) => {
+export const HeaderAdmin = ({role, userName}: HeaderProps) => {
   return (
     <>
         <header>
