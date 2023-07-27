@@ -23,9 +23,9 @@ export const MenuPage = () => {
           <Card></Card>
           <Card></Card>
         </section>
-        <section className="w-2/4">
-          <div>
-            <input type="text" />
+        <section className="w-[40%]">
+          <div className="border border-orange-400 ">
+            <input type="text" className="border" />
           </div>
         </section>
       </main>

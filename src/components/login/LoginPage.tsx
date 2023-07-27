@@ -1,7 +1,8 @@
-import { FormEventHandler } from "react";
-import burgerMobile from "../../assets/burgerMobile.png";
+import { FormEventHandler, useState } from "react";
+// import burgerMobile from "../../assets/burgerMobile.png";
 import logo from "../../assets/logo.png";
 import { API_URL } from "../../constants";
+import burgerTablet from "../../assets/burgerTablet.png";
 
 export const LoginPage = () => {
   const login: FormEventHandler<HTMLFormElement> = (event) => {
@@ -46,17 +47,20 @@ export const LoginPage = () => {
 
   return (
     <div className="min-h-screen bg-orange-50">
-      <div className="bg-orange-400 mb-16 pt-10">
-        <img src={logo} alt="Logo" className="w-[132px] mx-auto" />
+      <div className="bg-orange-400 mb-16 pt-14 md:pt-8 md:h-[43vh]">
+        <img src={logo} alt="Logo" className="w-[130px] mx-auto mb-3" />
         <img
-          src={burgerMobile}
+          src={burgerTablet}
           alt="burger"
-          className="relative -bottom-20 -mt-20 w-full"
+          className="relative -bottom-[102px] md:-bottom-14 -mt-[100px] w-full "
         />
       </div>
-      <div className="px-12">
+      <div className="p-14 md:px-20 md:py-5 md:mt-44">
+        <p className="text-center text-orange-400 font-rammetto py-5 text-2xl">
+          Bienvenid@
+        </p>
         {/* onSubmit={login} */}
-        <form onSubmit={login}>
+        <form onSubmit={login} className="md:w-[60%] md:mx-auto">
           <div className="mb-4">
             <label className="block font-bold pb-2">Correo</label>
             <input
@@ -79,7 +83,7 @@ export const LoginPage = () => {
             {/* <p>La contraseña es requerida</p> */}
           </div>
 
-          <button className="bg-orange-400 w-full p-2 rounded-xl text-white font-bold">
+          <button className="bg-orange-400 w-full p-2 rounded-xl text-white font-bold cursor-pointer ease-out duration-300">
             Iniciar sesión
           </button>
         </form>
