@@ -5,10 +5,10 @@ import { FilterBtn } from "./FilterBtn";
 import { ProductOrder } from "./ProductOrder";
 import { Input } from "./Input";
 import clientIcon from "./../../../assets/icons/client.png";
-
+import cafeOrder from "./../../../assets/cafe-americano-order.png";
 export const MenuPage = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header role="Mesero/a" userName="Mario" />
 
       <main className="flex justify-center gap-8 pt-5 mx-auto max-w-screen-sm">
@@ -20,7 +20,6 @@ export const MenuPage = () => {
             <FilterBtn nameFilter="Almuerzo"></FilterBtn>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Card></Card>
             <Card></Card>
             <Card></Card>
             <Card></Card>
@@ -38,8 +37,10 @@ export const MenuPage = () => {
                 <Input icon={clientIcon} placeholder="Nombre de cliente" />
               </div>
               <div className="mx-3">
-                <ProductOrder />
-                <ProductOrder />
+                <ProductOrder img={cafeOrder} />
+                <ProductOrder img={cafeOrder} />
+                <ProductOrder img={cafeOrder} />
+                <ProductOrder img={cafeOrder} />
               </div>
               <div className="flex justify-between mx-3 py-4">
                 <span className="font-bold text-orange-400">Total</span>
@@ -53,7 +54,9 @@ export const MenuPage = () => {
         </section>
       </main>
 
-      <Nav />
+      <div className="mt-auto sticky bottom-0">
+        <Nav />
+      </div>
     </div>
   );
 };

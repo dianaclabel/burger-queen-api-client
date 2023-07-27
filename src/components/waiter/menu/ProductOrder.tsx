@@ -1,13 +1,12 @@
-import cafeOrder from "./../../../assets/cafe-americano-order.png";
 import deleteIcon from "./../../../assets/icons/delete.png";
 import addIcon from "./../../../assets/icons/add.png";
 import minusIcon from "./../../../assets/icons/minus.png";
-export function ProductOrder() {
+export function ProductOrder({ img }: { img: string }) {
   return (
     <div className="flex justify-between gap-4 pb-2 pt-5 border-b-[1px] border-orange-400">
       <div className="flex gap-4">
         <div>
-          <img src={cafeOrder} alt="product" className="w-14" />
+          <img src={img} alt="product" className="w-14" />
         </div>
         <div className="text-sm">
           <p className="font-bold font-inter">Cafe Americano</p>
