@@ -1,17 +1,19 @@
 export function ProductOrder() {
-  <div>
-    <img src="/" alt="product" />
+  return (
     <div>
-      <p>Cafe Americano</p>
-      <p>$5.00</p>
-    </div>
-    <div>
-      <img src="/" alt="trash" />
+      <img src="/" alt="product" />
       <div>
-        <img src="/" alt="rest" />
-        <p>1</p>
-        <img src="/" alt="more" />
+        <p>Cafe Americano</p>
+        <p>$5.00</p>
+      </div>
+      <div>
+        <img src="/" alt="trash" />
+        <div>
+          <img src="/" alt="rest" />
+          <p>1</p>
+          <img src="/" alt="more" />
+        </div>
       </div>
     </div>
-  </div>;
+  );
 }
