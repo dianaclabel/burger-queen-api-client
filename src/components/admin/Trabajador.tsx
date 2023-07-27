@@ -1,26 +1,20 @@
-type TrabajadorProps = {
+export type TrabajadorProps = {
+  item: string,
   id: string,
   name: string,
   email: string,
   position: string
 }
 
-const trab1: TrabajadorProps = {
-  id: "1",
-  name: "Luis Garcia",
-  email: "luis.garcia@burgerqueen.com",
-  position: "waiter"
-}
-
-export const Trabajador = ({TrabajadorProps}) => {
+export const Trabajador = (trabajador: TrabajadorProps) => {
   return (
     <>
         <section className='boxTrabajador'>
             <div className="containerTextTrab">
-                <p className="nombreTrabajador">{trab1.name}</p>
+                <p className="nombreTrabajador">{trabajador.item} {trabajador.name}</p>
                 <div className="datosTrabajador">
-                    <p>Correo: luis.garcia@burgerqueen.com</p>
-                    <p>Cargo: mesero</p>
+                    <p>Correo: {trabajador.email}</p>
+                    <p>Cargo: {trabajador.position}</p>
                 </div>
             </div>
             <div className="containerIconsTrab">

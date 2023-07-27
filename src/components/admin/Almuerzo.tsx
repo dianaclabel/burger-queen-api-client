@@ -1,13 +1,18 @@
+export type AlmuerzoProps = {
+    id: string,
+    name: string,
+    price: String
+}
 
 
-export const Almuerzo = () => {
+export const Almuerzo = (almuerzo:AlmuerzoProps) => {
     return (
         <>
             <section className='boxTrabajador'>
                     <div className="containerTextTrab">
-                        <p className="nombreTrabajador">Hamburguesa simple</p>
+                        <p className="nombreTrabajador">{almuerzo.name}</p>
                         <div className="datosTrabajador">
-                            <p>Precio: $10</p>
+                            <p>Precio: {almuerzo.price}</p>
                         </div>
                     </div>
                     <div className="containerIconsTrab">
