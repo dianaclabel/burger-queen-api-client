@@ -1,10 +1,16 @@
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler } from "react";
 // import burgerMobile from "../../assets/burgerMobile.png";
 import logo from "../../assets/logo.png";
 import { API_URL } from "../../constants";
 import burgerTablet from "../../assets/burgerTablet.png";
+import { useAuth } from "../../context/auth";
+import { useNavigate } from "react-router-dom";
+import { TUser } from "../../types/user";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+  const { setToken, setUser } = useAuth();
+
   const login: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     console.log("login", event);
@@ -30,10 +36,21 @@ export const LoginPage = () => {
         if (response.ok) {
           alert("login exitoso");
 
-          response.json().then((data) => {
+          response.json().then((data: { accessToken: string; user: TUser }) => {
             console.log(data);
 
-            /** @todo: Guardar el accessToken en localStorage y navegar al dashboard */
+            //Guardar la data en disco
+            localStorage.setItem("Auth-token", data.accessToken);
+            localStorage.setItem("Auth-user", JSON.stringify(data.user));
+
+            //Guardar la data en memoria
+            setToken(data.accessToken);
+            setUser(data.user);
+
+            //navegacion
+            navigate("/waiter/menu");
+            //separar la logica
+            // realizar swchit para navegar
           });
         } else {
           alert("Correo o contraseña incorrectos");
