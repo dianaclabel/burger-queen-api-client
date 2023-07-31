@@ -21,5 +21,6 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "@typescript-eslint/no-non-null-assertion": "off",
+    "react-refresh/only-export-components": "off",
   },
 };
