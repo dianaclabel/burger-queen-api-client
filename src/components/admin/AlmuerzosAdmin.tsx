@@ -3,13 +3,13 @@ import { AlmuerzoPropsArray, MainAlmuerzos } from "./compBodyAdmin/MainAlmuerzos
 import { NavDesayunos } from "./compBodyAdmin/NavDesayunos"
 
 const almuerzos: AlmuerzoPropsArray = {items: [
-  {id:"a001", name: "Hamburguesa simple", price: "$10"},
-  {id:"a002", name: "Hamburguesa doble", price: "$15"},
-  {id:"a003", name: "Papas fritas", price: "$5"},
-  {id:"a004", name: "Agua 500ml", price: "$5"},
-  {id:"a005", name: "Agua 750ml", price: "$7"},
-  {id:"a006", name: "Bebida/gaseosa 500ml", price: "$7"},
-  {id:"a007", name: "Bebida/gaseosa 750ml", price: "$10"},
+  {id:"1", name: "Hamburguesa simple", price: 1000, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"2", name: "Hamburguesa doble", price: 1500, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"3", name: "Papas fritas", price: 500, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"4", name: "Agua 500ml", price: 500, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"5", name: "Agua 750ml", price: 700, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"6", name: "Bebida/gaseosa 500ml", price: 700, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"7", name: "Bebida/gaseosa 750ml", price: 1000, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
 
 ]}
 

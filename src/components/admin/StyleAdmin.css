@@ -92,23 +92,18 @@ main{
     box-shadow: 5px 5px 10px #372F2A;
 
 }
-.nombreTrabajador{
-    font-size: 20px;
-    font-weight: bold;
-}
-.datosTrabajador{
-    font-size: 16px;
-    font-weight: normal;
-    padding-left: 25px;
-}
 .containerIconsTrab{
     display: flex;
+    justify-content: end;
     width: 20%;
 }
 .containerTextTrab{
     display: flex;
     flex-direction: column;
     width: 60%;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
 }
 .boxPedidoAdmin {
     display: flex;

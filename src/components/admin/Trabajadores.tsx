@@ -5,9 +5,9 @@ import { MainTrabajadores, TrabajadorPropsArray } from "./compBodyAdmin/MainTrab
 import { NavTrabajadores } from "./compBodyAdmin/NavTrabajadores"
 
 const trabajadores: TrabajadorPropsArray = { itemsTrab: [
-  {item: "1." ,id: "t001", name: "Luis Garcia", email: "luis.garcia@burgerqueen.com", position: "mesero"},
-  {item: "2." ,id: "t002", name: "Carmen Obregon", email: "carmen.obregon@burgerqueen.com", position: "mesero"},
-  {item: "3." ,id: "t003", name: "Danilo Vargas", email: "danilo.vargas@burgerqueen.com", position: "Jefe de cocina"},
+  {email: "luis.garcia@burgerqueen.com", pasword:" ", role: "mesero", id: "1"},
+  {email: "carmen.obregon@burgerqueen.com", pasword:" ", role: "mesero",id: "2"},
+  {email: "danilo.vargas@burgerqueen.com", pasword:" ", role: "Jefe de cocina",id: "3"},
 ]
 
 }

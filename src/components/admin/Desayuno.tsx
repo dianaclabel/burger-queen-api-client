@@ -2,7 +2,10 @@
 export type DesayunoProps = {
     id: string,
     name: string,
-    price: string
+    price: number,
+    image: string,
+    type: string,
+    dateEntry: string
 }
 
 export const Desayuno = (desayuno: DesayunoProps) => {
@@ -12,7 +15,7 @@ export const Desayuno = (desayuno: DesayunoProps) => {
                     <div className="containerTextTrab">
                         <p className="nombreTrabajador">{desayuno.name}</p>
                         <div className="datosTrabajador">
-                            <p>Precio: {desayuno.price}</p>
+                            <p>Precio: $ {desayuno.price}</p>
                         </div>
                     </div>
                     <div className="containerIconsTrab">

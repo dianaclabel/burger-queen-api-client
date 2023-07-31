@@ -1,9 +1,8 @@
 export type TrabajadorProps = {
-  item: string,
-  id: string,
-  name: string,
   email: string,
-  position: string
+  pasword: string,
+  role: string,
+  id: string,
 }
 
 export const Trabajador = (trabajador: TrabajadorProps) => {
@@ -11,11 +10,8 @@ export const Trabajador = (trabajador: TrabajadorProps) => {
     <>
         <section className='boxTrabajador'>
             <div className="containerTextTrab">
-                <p className="nombreTrabajador">{trabajador.item} {trabajador.name}</p>
-                <div className="datosTrabajador">
-                    <p>Correo: {trabajador.email}</p>
-                    <p>Cargo: {trabajador.position}</p>
-                </div>
+                    <p>Email: {trabajador.email}</p>
+                    <p>Role: {trabajador.role}</p>
             </div>
             <div className="containerIconsTrab">
                     <img className="iconEdit" src="src/assets/Edit.png" />

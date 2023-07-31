@@ -5,10 +5,10 @@ import { NavDesayunos } from "./compBodyAdmin/NavDesayunos"
 
 
 const desayunos: DesayunoPropsArray = {items: [
-  {id:"d001",name: "Café americano", price: "$5"},
-  {id:"d002",name: "Café con leche", price: "$7"},
-  {id:"d003",name: "Sandwich de jamón y queso", price: "$10"},
-  {id:"d004",name: "Jugo de frutas natural", price: "$7"},
+  {id:"1",name: "Café americano", price: 500, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"2",name: "Café con leche", price: 700, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"3",name: "Sandwich de jamón y queso", price: 1000, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
+  {id:"4",name: "Jugo de frutas natural", price: 700, image:"", type: "desayuno", dateEntry: "2022-03-05 15:14:10"},
 ]}
 
 export const Desayunos = () => {

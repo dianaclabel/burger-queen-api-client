@@ -1,22 +1,28 @@
-export type ItemPedido = {
-    id: string,
-    quantity: number,
-    description: string
+export type ItemProducts = {
+    qty: number,
+    product: {
+        id: number,
+        name: string,
+        price: number,
+        image: string,
+        type: string,
+        dateEntry: string,
+    }
 }
 
 export type PedidoProps = {
-    waiter: string,
     client: string,
-    time: string
-    items: Array<ItemPedido>
+    products: Array<ItemProducts>,
+    status: string,
+    dataEntry: string,
 }
 
 
 export const PedidoAdmin = (pedido:PedidoProps) => {
     
-    const listItems = pedido.items.map(products => 
-        <div key={products.id} className="boxDatos">
-        <p> {products.quantity} {products.description}</p>
+    const listItems = pedido.products.map(prod => 
+        <div key={prod.product.id} className="boxDatos">
+        <p> {prod.qty} {prod.product.name}</p>
         </div>)
 
   return (
@@ -30,16 +36,12 @@ export const PedidoAdmin = (pedido:PedidoProps) => {
                 <div className="boxPedido">
                     <div className="boxPedidoIzq">
                         <div className="boxDatos">
-                            <img className="iconWaiter" src="src/assets/Waiter.png"/>
-                            <p>{pedido.waiter}</p>
-                        </div>
-                        <div className="boxDatos">
                             <img className="iconUserClient" src="src/assets/UserClient.png"/>
                             <p>{pedido.client}</p>
                         </div>
                         <div className="boxDatos">
                             <img className="iconTimeMachine" src="src/assets/TimeMachine.png"/>
-                            <p>{pedido.time}</p>
+                            <p>{pedido.dataEntry}</p>
                         </div>
                     </div>
                     <div className="lineaPedidos">
@@ -48,7 +50,7 @@ export const PedidoAdmin = (pedido:PedidoProps) => {
                     <div className="boxPedidoDer">
                         {listItems}
                         <div className="boxButton">
-                            <button className="button2" >Pendiente</button>
+                            <div className="button2">{pedido.status}</div>
                         </div>
                     </div>
                     
