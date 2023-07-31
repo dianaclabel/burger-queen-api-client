@@ -1,7 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import { TUser } from "../types/user";
-
-// Context
 
 type TAuthContext = {
   user: TUser | undefined;
@@ -10,21 +8,22 @@ type TAuthContext = {
   setToken: React.Dispatch<React.SetStateAction<string>>;
 };
 
+//creando un contexto
 export const AuthContext = createContext({} as TAuthContext);
-
-type AuthProviderProps = {
-  children: JSX.Element | JSX.Element[];
-};
 
 // Provider
 
-export const AuthProvider = ({ children }: AuthProviderProps) => {
-  //
+type AuthContextProviderProps = {
+  children: JSX.Element | React.ReactNode;
+};
+export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
+  //Se guarda los valores de user y token
   const [user, setUser] = useState<TUser>();
   const [token, setToken] = useState("");
 
   return (
-    <AuthContext.Provider value={{ user, setUser, token, setToken }}>
+    //Se esta utilizando el contexto creado, Provider Es un componente que proporciona los datos que desea compartir con sus componentes hijos.
+    <AuthContext.Provider value={{ user, token, setToken, setUser }}>
       {children}
     </AuthContext.Provider>
   );
@@ -33,4 +32,4 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 // Hook
 // En lugar de hacer: useContext(AuthContext)
 // Hacemos: useAuth()
-export const useAuth = () => useContext(AuthContext);
+// export const useAuth = () => useContext(AuthContext);

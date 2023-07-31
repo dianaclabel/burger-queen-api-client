@@ -1,5 +1,6 @@
 export type TUser = {
+ name: string; 
   id: number;
   email: string;
-  role: "admin" | "waiter" | "chef";
+  role: "admin" | "Mesero/a" | "Jefe de cocina";
 };

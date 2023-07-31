@@ -1,36 +1,26 @@
-import { FormEventHandler } from "react";
+import { FormEventHandler, useContext } from "react";
 // import burgerMobile from "../../assets/burgerMobile.png";
 import logo from "../../assets/logo.png";
-import { API_URL } from "../../constants";
 import burgerTablet from "../../assets/burgerTablet.png";
-import { useAuth } from "../../context/auth";
+import { AuthContext } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
 import { TUser } from "../../types/user";
+import { AuthService } from "../../services/auth";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const { setToken, setUser } = useAuth();
+  //useContext(AuthContext) se usa el auth context para traer los valores de authContext.provider
+  const { setToken, setUser } = useContext(AuthContext);
 
-  const login: FormEventHandler<HTMLFormElement> = (event) => {
+  const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    console.log("login", event);
 
     const formData = new FormData(event.target as HTMLFormElement);
-
-    const dataUser = {
-      email: formData.get("email"),
-      password: formData.get("password"),
-    };
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
 
     //consumiendo la API
-    fetch(API_URL + "/login", {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataUser),
-    })
+    AuthService.login(email, password)
       .then((response) => {
         console.log(response);
         if (response.ok) {
@@ -48,9 +38,19 @@ export const LoginPage = () => {
             setUser(data.user);
 
             //navegacion
-            navigate("/waiter/menu");
-            //separar la logica
-            // realizar swchit para navegar
+            switch (data.user.role) {
+              case "Mesero/a":
+                navigate("/waiter/menu");
+                break;
+
+              case "Jefe de cocina":
+                navigate("/kitchen/orders");
+                break;
+
+              case "admin":
+                navigate("/admin");
+                break;
+            }
           });
         } else {
           alert("Correo o contraseña incorrectos");
@@ -76,8 +76,7 @@ export const LoginPage = () => {
         <p className="text-center text-orange-400 font-rammetto py-5 text-2xl">
           Bienvenid@
         </p>
-        {/* onSubmit={login} */}
-        <form onSubmit={login} className="md:w-[60%] md:mx-auto">
+        <form onSubmit={onSubmit} className="md:w-[60%] md:mx-auto">
           <div className="mb-4">
             <label className="block font-bold pb-2">Correo</label>
             <input
@@ -86,7 +85,6 @@ export const LoginPage = () => {
               className="block rounded-xl w-full py-1 px-4 border border-orange-900 "
               placeholder="example@gmail.com"
             />
-            {/* <p>Correo invalido</p> */}
           </div>
 
           <div className="mb-6">
@@ -97,14 +95,11 @@ export const LoginPage = () => {
               className="block rounded-xl w-full py-1 px-4 border border-orange-900"
               placeholder="***********"
             />
-            {/* <p>La contraseña es requerida</p> */}
           </div>
-
           <button className="bg-orange-400 w-full p-2 rounded-xl text-white font-bold cursor-pointer ease-out duration-300">
             Iniciar sesión
           </button>
         </form>
-
         <p className="text-center mt-10">@ByDiana&Leo</p>
       </div>
     </div>
