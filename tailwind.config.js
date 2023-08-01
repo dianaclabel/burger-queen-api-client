@@ -13,6 +13,7 @@ export default {
       },
       fontFamily: {
         inter: "Inter, Arial, sans-serif",
+        rammetto: "Rammetto One, cursive",
       },
     },
   },
