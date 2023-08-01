@@ -25,6 +25,14 @@ function App() {
                 <Route path="orders" element={<OrdersPage />} />
               </Route>
             </Route>
+
+            {/* <Route path="/admin">
+                <Route path="" element={<HomeAdmin />} />
+                <Route path="trabajadores" element={<Trabajadores />} />
+                <Route path="desayunos" element={<Desayunos />} />
+                <Route path="almuerzos" element={<AlmuerzosAdmin />} />
+                <Route path="pedidos" element={<PedidosAdmin />} />
+              </Route> */}
           </Routes>
         </BrowserRouter>
       </div>

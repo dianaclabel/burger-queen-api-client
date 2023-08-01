@@ -1,5 +1,5 @@
 import logo from "../../assets/Logo.png";
-import user from "../../assets/user.png";
+import user from "../../assets/icons/user.png";
 
 type Props = {
   role: string;

@@ -1,6 +1,6 @@
 import carta from "../../assets/carta.png";
-import logout from "../../assets/logout.png";
-import order from "../../assets/order.png";
+import logout from "../../assets/icons/logout.png";
+import order from "../../assets/icons/order.png";
 
 export const Nav = () => {
   const styleNav = {
