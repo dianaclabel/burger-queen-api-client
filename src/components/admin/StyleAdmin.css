@@ -1,0 +1,198 @@
+
+.contenedor{
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    background-color: blue;
+}
+header{
+    background-color: #F58C1E;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px;
+}
+main{
+    padding-top: 50px;
+    display: flex;
+    overflow: scroll;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F0EB;
+    width: 100%;
+} 
+.titulo{
+    color: #372F2A;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px #7a7975;
+}
+.navHomeAdmin{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #F58C1E;
+    padding: 20px 50px;
+    width: 100%;
+}
+.navTrabajadores{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F58C1E;
+    padding: 20px 50px;
+    width: 100%;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.textoAdmin{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px #555452;
+}
+.usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 10px #555452;
+}
+.buttonHome {
+    background-color:#7C5632 ;
+    text-align: center;
+    text-shadow: 3px 3px 10px #372F2A;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 75%;
+    height: 15%;
+    margin-top: 30px;    
+    box-shadow: 5px 5px 10px #372F2A;
+}
+
+.boxTrabajador {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#7C5632 ;
+    text-shadow: 3px 3px 10px #372F2A;
+    color: #FFFFFF;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80%;
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px #372F2A;
+
+}
+.containerIconsTrab{
+    display: flex;
+    justify-content: flex-end;
+    width: 20%;
+}
+.containerTextTrab{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+.boxPedidoAdmin {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color:#7C5632 ;
+    text-shadow: 3px 3px 10px #372F2A;
+    color: #FFFFFF;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 85%;
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px #372F2A;
+}
+.boxSuperiorPedido{
+    background-color: #F58C1E;
+    display: flex;
+    align-items: center;
+    height: 16%;
+    justify-content: space-around;
+    width: 100%;
+}
+.boxPedido{
+    display: flex;
+    width: 100%;
+}
+.boxPedidoIzq{
+    flex: 1;
+    padding: 20px;  
+}
+.boxPedidoDer{
+    flex: 1;
+    padding: 20px;  
+}
+.boxDatos{
+    display: flex;
+    margin-top: 10px;
+}
+.boxButton{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.button2{
+    width: 50%;
+    background-color:#F58C1E;
+    text-align: center;
+    text-shadow: 3px 3px 10px #372F2A;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border-color: #372F2A;
+    border-width: 1px;   
+    box-shadow: 5px 5px 10px #372F2A;
+}
+.lineaPedidos{
+    width: 1%;
+    height: 100%;
+ 
+}
+.iconLogout,.iconCustomer,
+.iconReturn{
+    width: 40px;
+    cursor: pointer;
+}
+.iconUser, .iconWaiter {
+    width: 50px;
+    cursor: pointer;
+}
+.iconEdit{
+    width: 35px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.iconUserClient{
+    width: 35px;
+    cursor: pointer;
+}
+.iconTimeMachine{
+    width: 30px;
+    cursor: pointer;
+}
+.iconDelete{
+    width: 50px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.iconAddNew{
+    width: 80px;
+    cursor: pointer;
+}
