@@ -3,13 +3,18 @@ import { FilterBtn } from "./FilterBtn";
 import { ProductOrder } from "./ProductOrder";
 import { Input } from "./Input";
 import clientIcon from "./../../../assets/icons/client.png";
+import search from "../../../assets/icons/search.png";
 import cafeOrder from "./../../../assets/cafe-americano-order.png";
 export const MenuPage = () => {
   return (
     <div className="flex justify-center gap-8 pt-5 mx-auto max-w-screen-sm">
       <section className="md:w-1/2">
-        <input type="text" placeholder="Buscador de producto" />
-        <div className="flex justify-center gap-2">
+        <Input
+          type="text"
+          icon={search}
+          placeholder="Buscador de producto"
+        ></Input>
+        <div className="flex justify-center gap-2 my-5">
           <FilterBtn nameFilter="Todos"></FilterBtn>
           <FilterBtn nameFilter="Desayuno"></FilterBtn>
           <FilterBtn nameFilter="Almuerzo"></FilterBtn>
@@ -39,9 +44,9 @@ export const MenuPage = () => {
             </div>
             <div className="flex justify-between mx-3 py-4">
               <span className="font-bold text-orange-400">Total</span>
-              <span className="font-bold text-orange-400">$30.00</span>
+              <span className="font-extrabold text-orange-400 ">$30.00</span>
             </div>
-            <button className="bg-orange-400 w-3/4 p-2 my-4 rounded-xl text-white font-bold cursor-pointer ease-out duration-300 ">
+            <button className="bg-orange-400 w-3/4 p-2 my-4 rounded-xl text-white font-bold cursor-pointer ease-out duration-300 hover:bg-orange-500">
               Enviar Pedido
             </button>
           </form>
