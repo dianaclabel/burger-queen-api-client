@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { LoginPage } from "./components/login/LoginPage";
 import { HomeAdmin } from "./components/admin/HomeAdmin";
 import { Trabajadores } from "./components/admin/Trabajadores";
 import { Desayunos } from "./components/admin/Desayunos";
@@ -13,12 +12,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Dashboard />} /> */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/homeAdmin" element={<HomeAdmin />} />
-          <Route path="/trabajadores" element={<Trabajadores />} />
-          <Route path="/desayunos" element={<Desayunos />} />
-          <Route path="/almuerzos" element={<AlmuerzosAdmin />} />
-          <Route path="/pedidos" element={<PedidosAdmin />} />
+          <Route path="/admin">
+            <Route path="" element={<HomeAdmin />} />
+            <Route path="trabajadores" element={<Trabajadores />} />
+            <Route path="desayunos" element={<Desayunos />} />
+            <Route path="almuerzos" element={<AlmuerzosAdmin />} />
+            <Route path="pedidos" element={<PedidosAdmin />} />
+          </Route>
 
         </Routes>
       </BrowserRouter>

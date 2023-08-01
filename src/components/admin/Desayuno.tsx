@@ -19,8 +19,8 @@ export const Desayuno = (desayuno: DesayunoProps) => {
                         </div>
                     </div>
                     <div className="containerIconsTrab">
-                        <img className="iconEdit" src="src/assets/Edit.png" />
-                        <img className="iconDelete" src="src/assets/Delete.png" />
+                        <img className="iconEdit" src="../src/assets/iconsAdmin/Edit.svg" />
+                        <img className="iconDelete" src="../src/assets/iconsAdmin/Delete.svg" />
                     </div>
             </section>
         </>

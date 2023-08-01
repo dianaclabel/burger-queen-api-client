@@ -36,16 +36,16 @@ export const PedidoAdmin = (pedido:PedidoProps) => {
                 <div className="boxPedido">
                     <div className="boxPedidoIzq">
                         <div className="boxDatos">
-                            <img className="iconUserClient" src="src/assets/UserClient.png"/>
+                            <img className="iconUserClient" src="../src/assets/iconsAdmin/UserClient.svg"/>
                             <p>{pedido.client}</p>
                         </div>
                         <div className="boxDatos">
-                            <img className="iconTimeMachine" src="src/assets/TimeMachine.png"/>
+                            <img className="iconTimeMachine" src="../src/assets/iconsAdmin/TimeMachine.svg"/>
                             <p>{pedido.dataEntry}</p>
                         </div>
                     </div>
                     <div className="lineaPedidos">
-                        <img className="iconLinea" src="src/assets/Vector1.png" />
+                        <img className="iconLinea" src="../src/assets/iconsAdmin/Vector1.svg" />
                     </div>
                     <div className="boxPedidoDer">
                         {listItems}

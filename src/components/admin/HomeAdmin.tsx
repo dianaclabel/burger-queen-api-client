@@ -7,19 +7,19 @@ import { NavHomeAdmin } from './compBodyAdmin/NavHomeAdmin'
 
 export const HomeAdmin = () => {
 
-    let navigator = useNavigate()
+    const navigator = useNavigate()
 
     const onTrabajadores = () => {
-        navigator("/trabajadores")
+        navigator("/admin/trabajadores")
     }
     const onDesayunos = () => {
-        navigator("/desayunos")
+        navigator("/admin/desayunos")
     }
     const onAlmuerzos = () => {
-        navigator("/almuerzos")
+        navigator("/admin/almuerzos")
     }
     const onPedidos = () => {
-        navigator("/pedidos")
+        navigator("/admin/pedidos")
     }
 
     return (
