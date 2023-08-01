@@ -47,7 +47,7 @@ export const LoginPage = () => {
                 navigate("/kitchen/orders");
                 break;
 
-              case "admin":
+              case "Admin":
                 navigate("/admin");
                 break;
             }

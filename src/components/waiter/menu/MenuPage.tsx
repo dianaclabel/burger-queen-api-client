@@ -6,7 +6,7 @@ import clientIcon from "./../../../assets/icons/client.png";
 import cafeOrder from "./../../../assets/cafe-americano-order.png";
 export const MenuPage = () => {
   return (
-    <main className="flex justify-center gap-8 pt-5 mx-auto max-w-screen-sm">
+    <div className="flex justify-center gap-8 pt-5 mx-auto max-w-screen-sm">
       <section className="md:w-1/2">
         <input type="text" placeholder="Buscador de producto" />
         <div className="flex justify-center gap-2">
@@ -47,6 +47,6 @@ export const MenuPage = () => {
           </form>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
