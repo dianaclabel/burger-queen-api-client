@@ -8,8 +8,8 @@ export function ProductOrder({ img }: { img: string }) {
         <div>
           <img src={img} alt="product" className="w-14" />
         </div>
-        <div className="text-sm">
-          <p className="font-bold font-inter">Cafe Americano</p>
+        <div className="text-sm flex flex-col items-start">
+          <p className="font-bold font-inter ">Cafe Americano</p>
           <p>$5.00</p>
         </div>
       </div>
