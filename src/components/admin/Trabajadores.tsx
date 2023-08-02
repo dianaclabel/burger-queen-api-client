@@ -1,8 +1,10 @@
 
 
+/* import { ModalCrearTrab } from "./ModalCrearTrab" */
 import { HeaderAdmin } from "./compBodyAdmin/HeaderAdmin"
 import { MainTrabajadores, TrabajadorPropsArray } from "./compBodyAdmin/MainTrabajadores"
 import { NavTrabajadores } from "./compBodyAdmin/NavTrabajadores"
+/* import { useModal } from "./hooksAdmin/useModal" */
 
 const trabajadores: TrabajadorPropsArray = { itemsTrab: [
   {email: "luis.garcia@burgerqueen.com", pasword:" ", role: "mesero", id: "1"},
@@ -13,6 +15,8 @@ const trabajadores: TrabajadorPropsArray = { itemsTrab: [
 }
 
 export const Trabajadores = () => {
+  /* const [isOpenModal, openModal, closeModal] = useModal(false); */
+
   return (
     <>
         <div className='contenedor'>

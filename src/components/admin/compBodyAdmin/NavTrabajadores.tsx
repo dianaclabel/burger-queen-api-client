@@ -1,6 +1,8 @@
 
 
 export const NavTrabajadores = () => {
+  
+
   return (
     <>
         <nav className="navTrabajadores">
