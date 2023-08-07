@@ -1,14 +1,12 @@
 import { Card } from "./Card";
 import { FilterBtn } from "./FilterBtn";
-import { ProductOrder } from "./ProductOrder";
 import { Input } from "./Input";
-import clientIcon from "./../../../assets/icons/client.png";
 import search from "../../../assets/icons/search.png";
-import cafeOrder from "./../../../assets/cafe-americano-order.png";
 import { useEffect, useState, useContext } from "react";
 import { TProduct, TProductType } from "../../../types/product";
 import { ProdutsService } from "../../../services/products";
 import { AuthContext } from "../../../context/auth";
+import { NewOrderColumn } from "./NewOrderColumn";
 
 export const MenuPage = () => {
   const { token } = useContext(AuthContext);
@@ -68,39 +66,12 @@ export const MenuPage = () => {
         </div>
         <div className="grid grid-cols-2 gap-4">
           {products?.map((product) => (
-            <Card
-              key={product.id}
-              imgUrl={product.image}
-              nameProduct={product.name}
-              price={product.price}
-            ></Card>
+            <Card key={product.id} product={product} />
           ))}
         </div>
       </section>
       <section className="md:w-1/2">
-        <div className="border border-orange-400 rounded-lg w-full">
-          <form className="text-center">
-            <div className="bg-orange-400 py-3 text-white font-inter font-bold text-lg rounded-t-lg text-center ">
-              Nuevo pedido
-            </div>
-            <div className="p-3">
-              <Input icon={clientIcon} placeholder="Nombre de cliente" />
-            </div>
-            <div className="mx-3">
-              <ProductOrder img={cafeOrder} />
-              <ProductOrder img={cafeOrder} />
-              <ProductOrder img={cafeOrder} />
-              <ProductOrder img={cafeOrder} />
-            </div>
-            <div className="flex justify-between mx-3 py-4">
-              <span className="font-bold text-orange-400">Total</span>
-              <span className="font-extrabold text-orange-400 ">$30.00</span>
-            </div>
-            <button className="bg-orange-400 w-3/4 p-2 my-4 rounded-xl text-white font-bold cursor-pointer ease-out duration-300 hover:bg-orange-500">
-              Enviar Pedido
-            </button>
-          </form>
-        </div>
+        <NewOrderColumn />
       </section>
     </div>
   );

@@ -13,6 +13,7 @@ export const ProdutsService = {
     });
   },
 
+  //admin
   createProduct() {
     console.log("createProduct");
   },

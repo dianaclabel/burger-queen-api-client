@@ -1,6 +1,6 @@
-import { HTMLProps } from "react";
+import { InputHTMLAttributes } from "react";
 
-type Props = Omit<HTMLProps<HTMLInputElement>, "className"> & {
+type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "className"> & {
   icon: string;
 };
 

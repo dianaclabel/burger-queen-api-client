@@ -8,37 +8,39 @@ import { LoginPage } from "./components/login/LoginPage";
 import { MenuPage } from "./components/waiter/menu/MenuPage";
 import { OrdersPage } from "./components/waiter/orders/OrdersPage";
 import { AuthContextProvider } from "./context/auth";
+import { NewOrderContextProvider } from "./context/newOrder";
 import { WaiterLayout } from "./components/waiter/WaiterLayout";
 import { PrivateWrapper } from "./components/PrivateWrapper";
-// import { Dashboard } from "./components/pages/dashboard/Dashboard";
 
 function App() {
   return (
     <>
       <AuthContextProvider>
-        <div className="font-inter">
-          <BrowserRouter>
-            <Routes>
-              <Route path="/login" element={<LoginPage />} />
-              {/* Rutas para el mesero */}
-              <Route element={<PrivateWrapper />}>
-                <Route path="/waiter" element={<WaiterLayout />}>
-                  {/* Redirige al path especificado en este caso ir a menu en caso de solo sea /waiter  */}
-                  <Route path="" element={<Navigate to="/waiter/menu" />} />
-                  <Route path="menu" element={<MenuPage />} />
-                  <Route path="orders" element={<OrdersPage />} />
+        <NewOrderContextProvider>
+          <div className="font-inter">
+            <BrowserRouter>
+              <Routes>
+                <Route path="/login" element={<LoginPage />} />
+                {/* Rutas para el mesero */}
+                <Route element={<PrivateWrapper />}>
+                  <Route path="/waiter" element={<WaiterLayout />}>
+                    {/* Redirige al path especificado en este caso ir a menu en caso de solo sea /waiter  */}
+                    <Route path="" element={<Navigate to="/waiter/menu" />} />
+                    <Route path="menu" element={<MenuPage />} />
+                    <Route path="orders" element={<OrdersPage />} />
+                  </Route>
                 </Route>
-              </Route>
-              <Route path="/admin">
-                <Route path="" element={<HomeAdmin />} />
-                <Route path="trabajadores" element={<Trabajadores />} />
-                <Route path="desayunos" element={<Desayunos />} />
-                <Route path="almuerzos" element={<AlmuerzosAdmin />} />
-                <Route path="pedidos" element={<PedidosAdmin />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </div>
+                <Route path="/admin">
+                  <Route path="" element={<HomeAdmin />} />
+                  <Route path="trabajadores" element={<Trabajadores />} />
+                  <Route path="desayunos" element={<Desayunos />} />
+                  <Route path="almuerzos" element={<AlmuerzosAdmin />} />
+                  <Route path="pedidos" element={<PedidosAdmin />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </NewOrderContextProvider>
       </AuthContextProvider>
     </>
   );
