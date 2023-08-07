@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
 import { TUser } from "../../types/user";
 import { AuthService } from "../../services/auth";
+import { toast } from "react-hot-toast";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const LoginPage = () => {
       .then((response) => {
         console.log(response);
         if (response.ok) {
-          alert("login exitoso");
+          toast("login exitoso");
 
           response.json().then((data: { accessToken: string; user: TUser }) => {
             console.log(data);

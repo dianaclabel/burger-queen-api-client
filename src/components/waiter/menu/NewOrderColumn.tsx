@@ -3,23 +3,30 @@ import { Input } from "./Input";
 import { ProductOrder } from "./ProductOrder";
 import clientIcon from "./../../../assets/icons/client.png";
 import { NewOrderContext } from "../../../context/newOrder";
+import { toast } from "react-hot-toast";
 
 export const NewOrderColumn = () => {
   const { items, createOrder, client, setClient, total } =
     useContext(NewOrderContext);
 
   const handleSendOrder = () => {
+    // toast.loading("Creando pedido...");
+
     createOrder()
       .then((response) => {
+        // toast.dismiss();
+
         if (response.ok) {
-          alert("Pedido creado exitosamente");
+          toast.success("Pedido creado exitosamente");
         } else {
-          alert("No se pudo crear su pedido");
+          toast.error("No se pudo crear su pedido");
         }
       })
       .catch(() => {
+        // toast.dismiss();
+
         //en caso de que no llegue al servidor
-        alert("No se pudo establecer conexión con el servidor");
+        toast.error("No se pudo establecer conexión con el servidor");
       });
   };
 
