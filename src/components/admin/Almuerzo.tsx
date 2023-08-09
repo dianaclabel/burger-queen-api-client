@@ -19,7 +19,7 @@ export const Almuerzo = ({ almuerzo, deleteProducts, editProducts}: AlmModalProp
                     <div className="containerTextTrab">
                         <p className="nombreTrabajador">{almuerzo.name}</p>
                         <div className="datosTrabajador">
-                            <p>Precio: $ {almuerzo.price}</p>
+                            <p>Precio: S/. {almuerzo.price}</p>
                         </div>
                     </div>
                     <div className="containerIconsTrab">

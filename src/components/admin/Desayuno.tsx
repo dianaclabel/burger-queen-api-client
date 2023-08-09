@@ -21,7 +21,7 @@ export const Desayuno = ({desayuno, deleteProduct, editProduct}: DesModalProps) 
                     <div className="containerTextTrab">
                         <p className="nombreTrabajador">{desayuno.name}</p>
                         <div className="datosTrabajador">
-                            <p>Precio: $ {desayuno.price}</p>
+                            <p>Precio: S/. {desayuno.price}</p>
                         </div>
                     </div>
                     <div className="containerIconsTrab">
