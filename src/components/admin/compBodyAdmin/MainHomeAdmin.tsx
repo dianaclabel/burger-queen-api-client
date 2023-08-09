@@ -1,3 +1,4 @@
+
 export type MainProps = {
   onTrabajadores: () => void,
   onDesayunos: () => void,
