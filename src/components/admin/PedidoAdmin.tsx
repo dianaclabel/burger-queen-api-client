@@ -19,12 +19,10 @@ export type PedidoProps = {
 
 
 export const PedidoAdmin = (pedido:PedidoProps) => {
-    
     const listItems = pedido.products.map(prod => 
         <div key={prod.product.id} className="boxDatos">
         <p> {prod.qty} {prod.product.name}</p>
         </div>)
-
   return (
     <>
         <section className='boxPedidoAdmin'>

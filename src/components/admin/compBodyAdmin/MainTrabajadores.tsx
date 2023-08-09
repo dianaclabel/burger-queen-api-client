@@ -1,14 +1,17 @@
 import { Trabajador, TrabajadorProps } from "../Trabajador"
 
-export type TrabajadorPropsArray = {
-  itemsTrab: TrabajadorProps[]
+export type ListTrabajadoresProp = {
+  trabajadores: TrabajadorProps[]
+  onOpenDelete: (trabajador: TrabajadorProps) => void 
+  onOpenEdit: (trabajador: TrabajadorProps) => void 
 }
 
+export const MainTrabajadores = ({trabajadores, onOpenDelete,onOpenEdit}: ListTrabajadoresProp ) => {
 
-export const MainTrabajadores = (trabajadores:TrabajadorPropsArray) => {
-  const listTrab = trabajadores.itemsTrab.map(trab =>
-    <Trabajador {...trab} key={trab.id}/>
+  const listTrab = trabajadores.map(trab =>
+    <Trabajador trabajador={trab} onDeleteUser={onOpenDelete} onEditUser={onOpenEdit} key={trab.id}/>
     )
+    
   return (
     <>
         <main>
