@@ -10,11 +10,11 @@ export const NewOrderColumn = () => {
     useContext(NewOrderContext);
 
   const handleSendOrder = () => {
-    // toast.loading("Creando pedido...");
+    toast.loading("Creando pedido...");
 
     createOrder()
       .then((response) => {
-        // toast.dismiss();
+        toast.dismiss();
 
         if (response.ok) {
           toast.success("Pedido creado exitosamente");
@@ -23,7 +23,7 @@ export const NewOrderColumn = () => {
         }
       })
       .catch(() => {
-        // toast.dismiss();
+        toast.dismiss();
 
         //en caso de que no llegue al servidor
         toast.error("No se pudo establecer conexión con el servidor");

@@ -25,7 +25,7 @@ export const LoginPage = () => {
       .then((response) => {
         console.log(response);
         if (response.ok) {
-          toast("login exitoso");
+          toast.success("login exitoso");
 
           response.json().then((data: { accessToken: string; user: TUser }) => {
             console.log(data);
@@ -54,12 +54,12 @@ export const LoginPage = () => {
             }
           });
         } else {
-          alert("Correo o contraseña incorrectos");
+          toast.error("Correo o contraseña incorrectos");
         }
       })
       .catch((error) => {
         console.log(error);
-        alert("No se pudo establecer una conexion");
+        toast.error("No se pudo establecer una conexion");
       });
   };
 
