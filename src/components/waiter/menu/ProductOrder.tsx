@@ -10,12 +10,15 @@ export function ProductOrder({ item }: { item: TNewOrderItem }) {
   return (
     <div className="flex justify-between gap-4 pb-2 pt-5 border-b-[1px] border-orange-400">
       <div className="flex gap-4">
-        <div>
-          <img src={item.product.image} alt="product" className="w-14" />
-        </div>
-        <div className="text-sm flex flex-col items-start">
-          <p className="font-bold font-inter ">{item.product.name}</p>
-          <p>S/.{item.product.price}</p>
+        <img
+          src={item.product.image}
+          alt="product"
+          className="w-16  object-cover object-center aspect-square rounded-md"
+        />
+
+        <div className="text-sm flex flex-col items-start justify-between">
+          <p className="font-bold font-inter text-left">{item.product.name}</p>
+          <p className="font-bold text-orange-400 ">S/.{item.product.price}</p>
         </div>
       </div>
       <div className="flex flex-col justify-between ">

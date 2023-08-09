@@ -11,10 +11,12 @@ import { AuthContextProvider } from "./context/auth";
 import { NewOrderContextProvider } from "./context/newOrder";
 import { WaiterLayout } from "./components/waiter/WaiterLayout";
 import { PrivateWrapper } from "./components/PrivateWrapper";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
+      <Toaster position="bottom-center" />
       <AuthContextProvider>
         <NewOrderContextProvider>
           <div className="font-inter">

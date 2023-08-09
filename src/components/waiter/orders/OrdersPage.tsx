@@ -1,3 +1,11 @@
+import { NewOrderReady } from "./NewOrderReady";
+
 export const OrdersPage = () => {
-  return <main>Orders page</main>;
+  return (
+    <div className="flex flex-col items-center my-4">
+      <NewOrderReady />
+      <NewOrderReady />
+      <NewOrderReady />
+    </div>
+  );
 };
