@@ -8,7 +8,13 @@ export type DesayunoProps = {
     dateEntry: string
 }
 
-export const Desayuno = (desayuno: DesayunoProps) => {
+type DesModalProps = {
+    desayuno: DesayunoProps,
+    deleteProduct: (desayuno:DesayunoProps) => void
+    editProduct: (desayuno:DesayunoProps) => void
+ }
+
+export const Desayuno = ({desayuno, deleteProduct, editProduct}: DesModalProps) => {
     return (
         <>
             <section className='boxTrabajador'>
@@ -19,8 +25,8 @@ export const Desayuno = (desayuno: DesayunoProps) => {
                         </div>
                     </div>
                     <div className="containerIconsTrab">
-                        <img className="iconEdit" src="../src/assets/iconsAdmin/Edit.svg" />
-                        <img className="iconDelete" src="../src/assets/iconsAdmin/Delete.svg" />
+                        <img onClick={() => editProduct(desayuno)} className="iconEdit" src="../src/assets/iconsAdmin/Edit.svg" />
+                        <img onClick={() => deleteProduct(desayuno)} className="iconDelete" src="../src/assets/iconsAdmin/Delete.svg" />
                     </div>
             </section>
         </>

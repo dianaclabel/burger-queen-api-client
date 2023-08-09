@@ -16,7 +16,7 @@ header{
 main{
     padding-top: 50px;
     display: flex;
-    overflow: scroll;
+    overflow-y: auto;
     flex: 1;
     flex-direction: column;
     align-items: center;
@@ -88,6 +88,7 @@ main{
     border-radius: 20px;
     cursor: pointer;
     width: 80%;
+    max-width: 800px;
     margin-top: 30px;
     box-shadow: 5px 5px 10px #372F2A;
 
@@ -116,15 +117,16 @@ main{
     cursor: pointer;
     width: 85%;
     margin-top: 30px;
-    box-shadow: 5px 5px 10px #372F2A;
+    box-shadow: 5px 5px 20px #372F2A;
 }
 .boxSuperiorPedido{
-    background-color: #F58C1E;
+    background-color: #ee993e;
     display: flex;
     align-items: center;
     height: 16%;
     justify-content: space-around;
     width: 100%;
+    padding: 8px;
 }
 .boxPedido{
     display: flex;
@@ -149,16 +151,16 @@ main{
 }
 .button2{
     width: 50%;
-    background-color:#F58C1E;
+    background-color:#FFFFFF;
     text-align: center;
     text-shadow: 3px 3px 10px #372F2A;
-    color: #FFFFFF;
+    color: #372F2A;
     font-size: 16px;
     font-weight: bold;
     border-radius: 8px;
     border-color: #372F2A;
     border-width: 1px;   
-    box-shadow: 5px 5px 10px #372F2A;
+    box-shadow: 5px 5px 20px #372F2A;
 }
 .lineaPedidos{
     width: 1%;
@@ -219,7 +221,7 @@ button.buttonModal{
     left: 0;
     width: 100%;
     min-height: 100vh;
-    background-color: #454241;
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
@@ -233,7 +235,7 @@ button.buttonModal{
     padding: 3rem;
     min-width: 500px;
     max-width: 800px;
-    min-height: 400px;
+    min-height: 300px;
     max-height: 600px;
     background-color: #F5F0EB;
     border-radius: 15px;
