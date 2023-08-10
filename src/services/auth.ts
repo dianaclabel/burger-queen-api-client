@@ -9,6 +9,7 @@ export const AuthService = {
         accept: "application/json",
         "Content-Type": "application/json",
       },
+      //M. convierte a tipo Json
       body: JSON.stringify({ email, password }),
     });
   },

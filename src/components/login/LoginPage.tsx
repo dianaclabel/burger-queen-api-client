@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
 import { TUser } from "../../types/user";
 import { AuthService } from "../../services/auth";
-import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast"; //es una biblioteca
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ export const LoginPage = () => {
   const { setToken, setUser } = useContext(AuthContext);
 
   const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    // Evita que el formulario se envíe y la página se recargue
     event.preventDefault();
 
     const formData = new FormData(event.target as HTMLFormElement);
@@ -26,11 +27,12 @@ export const LoginPage = () => {
         console.log(response);
         if (response.ok) {
           toast.success("login exitoso");
-
+          //convertir el cuerpo Json a javascript
           response.json().then((data: { accessToken: string; user: TUser }) => {
             console.log(data);
 
             //Guardar la data en disco
+            //almacena datos en el almacenamiento local del navegador web.
             localStorage.setItem("Auth-token", data.accessToken);
             localStorage.setItem("Auth-user", JSON.stringify(data.user));
 
