@@ -1,11 +1,11 @@
 import deleteIcon from "./../../../assets/icons/delete.png";
 import addIcon from "./../../../assets/icons/add.png";
 import minusIcon from "./../../../assets/icons/minus.png";
-import { TNewOrderItem } from "../../../types/order";
+import { TOrderItem } from "../../../types/order";
 import { useContext } from "react";
 import { NewOrderContext } from "../../../context/newOrder";
 
-export function ProductOrder({ item }: { item: TNewOrderItem }) {
+export function ProductOrder({ item }: { item: TOrderItem }) {
   const { removeItem, increment, decrement } = useContext(NewOrderContext);
   return (
     <div className="flex justify-between gap-4 pb-2 pt-5 border-b-[1px] border-orange-400">

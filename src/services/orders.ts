@@ -11,7 +11,7 @@ export const OrdersService = {
   getOrders({ status, userId }: TGetOrderProps = {}) {
     const token = localStorage.getItem("Auth-token");
 
-    //Se crea los parametros para la URL
+    //para crear lo querys param de una URL
     const params = new URLSearchParams();
 
     if (typeof status === "string") {

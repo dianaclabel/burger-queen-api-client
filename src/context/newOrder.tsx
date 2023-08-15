@@ -1,13 +1,13 @@
 import { useState, createContext, useContext } from "react";
 import { TProduct } from "../types/product";
-import { TNewOrderItem } from "../types/order";
+import { TOrderItem } from "../types/order";
 import { OrdersService } from "../services/orders";
 import { AuthContext } from "./auth";
 
 type TNewOrderContextValue = {
   client: string;
   setClient: React.Dispatch<React.SetStateAction<string>>;
-  items: TNewOrderItem[];
+  items: TOrderItem[];
   increment: (product: TProduct) => void;
   decrement: (product: TProduct) => void;
   addItem: (product: TProduct) => void;
@@ -28,7 +28,7 @@ export const NewOrderContextProvider = ({ children }: ProviderProps) => {
   const { user } = useContext(AuthContext);
   // Estados
   const [client, setClient] = useState("");
-  const [items, setItems] = useState<TNewOrderItem[]>([]);
+  const [items, setItems] = useState<TOrderItem[]>([]);
 
   // Obtener el precio total del pedido, sumando el producto * cantidad de todos los items
   const total = items.reduce(
