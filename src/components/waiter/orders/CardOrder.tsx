@@ -4,9 +4,28 @@ import { CardOrderItem } from "./CardOrderItem";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth";
 import { format } from "date-fns";
+import { OrdersService } from "../../../services/orders";
+import { toast } from "react-hot-toast";
 
-export const CardOrder = ({ order }: { order: TOrder }) => {
+type Props = {
+  order: TOrder;
+  refresh: () => void;
+};
+
+export const CardOrder = ({ order, refresh }: Props) => {
   const { user } = useContext(AuthContext);
+
+  const handleDelivereOrder = () => {
+    OrdersService.deliverOrder(order.id).then((response) => {
+      if (response.ok) {
+        refresh();
+        toast.success("El pedido fue entregado");
+      } else {
+        toast.error("Ocurrio un error");
+      }
+    });
+  };
+
   return (
     <div className="bg-white border-t-[1px] border-[#695040] rounded-xl w-3/4 p-4 text-[#372F2A] my-4 shadow-lg shadow-[#564337]">
       <div className="flex justify-between px-3">
@@ -32,7 +51,7 @@ export const CardOrder = ({ order }: { order: TOrder }) => {
         </ul>
         <div>
           <div className="bg-yellow-300 rounded-xl py-2 px-6">
-            <p className="font-bold">Preparado</p>
+            <p className="font-bold">{order.status}</p>
           </div>
         </div>
       </div>
@@ -47,7 +66,10 @@ export const CardOrder = ({ order }: { order: TOrder }) => {
             <CardOrderItem key={item.product.id} item={item}></CardOrderItem>
           ))}
         </div>
-        <button className="bg-[#68A207] py-2 w-9/12 text-white font-bold rounded-lg text-xl mt-3">
+        <button
+          onClick={handleDelivereOrder}
+          className="bg-[#68A207] py-2 w-9/12 text-white font-bold rounded-lg text-xl mt-3"
+        >
           Entregar
         </button>
       </div>

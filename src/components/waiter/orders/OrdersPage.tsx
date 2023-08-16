@@ -5,14 +5,16 @@ import { OrdersService } from "../../../services/orders";
 import { AuthContext } from "../../../context/auth";
 
 export const OrdersPage = () => {
+  const [loadedDate, setLoadedDate] = useState(new Date());
   const { user } = useContext(AuthContext);
-  const status = "Preparado";
+
+  const refresh = () => setLoadedDate(new Date());
+
   const [orders, setOrders] = useState<TOrder[] | null>(null);
 
   useEffect(() => {
     let ignore = false;
-    setOrders(null);
-    OrdersService.getOrders({ status, userId: user?.id })
+    OrdersService.getOrders({ status: "Preparado", userId: user?.id })
       .then((response) => {
         if (!ignore) {
           if (response.ok) {
@@ -28,12 +30,12 @@ export const OrdersPage = () => {
     return () => {
       ignore = true;
     };
-  }, [user]);
+  }, [user, loadedDate]);
 
   return (
     <div className="flex flex-col items-center my-4">
       {orders?.map((order) => (
-        <CardOrder key={order.id} order={order} />
+        <CardOrder key={order.id} order={order} refresh={refresh} />
       ))}
     </div>
   );

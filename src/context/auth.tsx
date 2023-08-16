@@ -1,6 +1,10 @@
 import { createContext, useState } from "react";
 import { TUser } from "../types/user";
 
+const initialUserStr = localStorage.getItem("Auth-user");
+const initialUser = initialUserStr ? JSON.parse(initialUserStr) : undefined;
+const initialToken = localStorage.getItem("Auth-token") ?? "";
+
 type TAuthContext = {
   user: TUser | undefined;
   setUser: React.Dispatch<React.SetStateAction<TUser | undefined>>;
@@ -18,8 +22,8 @@ type AuthContextProviderProps = {
 };
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   //Se guarda los valores de user y token
-  const [user, setUser] = useState<TUser>();
-  const [token, setToken] = useState("");
+  const [user, setUser] = useState<TUser | undefined>(initialUser);
+  const [token, setToken] = useState(initialToken);
 
   return (
     //Se esta utilizando el contexto creado, Provider Es un componente que proporciona los datos que desea compartir con sus componentes hijos.

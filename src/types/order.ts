@@ -10,7 +10,7 @@ export type TOrder = {
   userId: number;
   client: string;
   products: TOrderItem[];
-  status: "Pendiente" | "Finalizado";
+  status: "Pendiente" | "Preparado" | "Entregado";
   dateEntry: string;
   dateProcessed: string;
 };

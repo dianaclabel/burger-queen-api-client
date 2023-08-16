@@ -2,7 +2,7 @@ import { API_URL } from "../constants";
 import { TNewOrder } from "../types/order";
 
 type TGetOrderProps = {
-  status?: string;
+  status?: string | string[];
   userId?: number;
 };
 
@@ -16,6 +16,10 @@ export const OrdersService = {
 
     if (typeof status === "string") {
       params.set("status", status);
+    } else if (Array.isArray(status)) {
+      status.forEach((s) => {
+        params.append("status", s);
+      });
     }
 
     if (typeof userId === "number") {
@@ -42,6 +46,37 @@ export const OrdersService = {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newOrder),
+    });
+  },
+
+  // Jefe de cocina
+  prepareOrder(orderId: number) {
+    const token = localStorage.getItem("Auth-token");
+    return fetch(API_URL + "/orders/" + orderId, {
+      method: "PATCH",
+      headers: {
+        authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        status: "Preparado",
+        dateProcessed: new Date().toISOString(),
+      }),
+    });
+  },
+
+  // Mesero
+  deliverOrder(orderId: number) {
+    const token = localStorage.getItem("Auth-token");
+    return fetch(API_URL + "/orders/" + orderId, {
+      method: "PATCH",
+      headers: {
+        authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        status: "Entregado",
+      }),
     });
   },
 };

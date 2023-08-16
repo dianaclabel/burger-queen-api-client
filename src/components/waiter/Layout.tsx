@@ -4,7 +4,7 @@ import { Nav } from "./Nav";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth";
 
-export const WaiterLayout = () => {
+export const Layout = () => {
   const { user } = useContext(AuthContext);
 
   return (
