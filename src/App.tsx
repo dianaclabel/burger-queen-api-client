@@ -25,7 +25,7 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route element={<PublicWrapper />}>
-                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/" element={<LoginPage />} />
                 </Route>
                 {/* Rutas para el mesero */}
                 <Route element={<PrivateWrapper />}>

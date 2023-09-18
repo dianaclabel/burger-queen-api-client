@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth";
 export const PrivateWrapper = () => {
   const { user } = useContext(AuthContext);
 
-  if (!user) return <Navigate to="/login" />;
+  if (!user) return <Navigate to="/" />;
 
   return <Outlet />;
 };
