@@ -1,5 +1,6 @@
 import { FormEventHandler, useContext } from "react";
 // import burgerMobile from "../../assets/burgerMobile.png";
+import bgLogo from "../../assets/bg-login.png";
 import logo from "../../assets/logo.png";
 import burgerTablet from "../../assets/burgerTablet.png";
 import { AuthContext } from "../../context/auth";
@@ -66,21 +67,30 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-orange-50">
-      <div className="bg-orange-400 mb-16 pt-14 md:pt-8 md:h-[43vh]">
-        <img src={logo} alt="Logo" className="w-[130px] mx-auto mb-3" />
+    <div className="min-h-screen bg-orange-50 xl:flex ">
+      <div className="bg-[#f58c1e] mb-16 pt-14 md:pt-8 md:h-[43vh] xl:min-h-[75vh] xl:w-[50%] xl:pt-[1.5rem] ">
+        <img src={logo} alt="Logo" className="w-[130px] mx-auto mb-3 " />
+
         <img
           src={burgerTablet}
           alt="burger"
-          className="relative -bottom-[102px] md:-bottom-14 -mt-[100px] w-full "
+          className="relative -bottom-[102px] md:-bottom-14 -mt-[100px] w-full xl:w-[60%} xl:bottom-[-70px] xl:z-10"
+        />
+        <img
+          src={bgLogo}
+          alt="bg-login"
+          className="hidden xl:block xl:w-full xl:relative xl:bottom-[30px]"
         />
       </div>
-      <div className="p-14 md:px-20 md:py-5 md:mt-44">
-        <p className="text-center text-orange-400 font-rammetto py-5 text-2xl">
-          Bienvenid@
-        </p>
-        <form onSubmit={onSubmit} className="md:w-[60%] md:mx-auto">
-          <div className="mb-4">
+      <div className="p-14 md:px-20 md:py-5 md:mt-44 xl:w-[50%] xl:mt-[6rem] ">
+        <form
+          onSubmit={onSubmit}
+          className="md:w-[60%] md:mx-auto xl:border-solid xl:border-[#f58c1e] xl:border-[2px] xl:p-[2rem] xl:w-[80%] xl:min-h-[60vh] xl:rounded-xl xl:bg-[#F5F0EB]"
+        >
+          <p className="text-center text-orange-400 font-rammetto py-5 text-2xl xl:text-3xl">
+            Bienvenid@
+          </p>
+          <div className="mb-4 xl:my-[2rem]">
             <label className="block font-bold pb-2">Correo</label>
             <input
               type="email"
